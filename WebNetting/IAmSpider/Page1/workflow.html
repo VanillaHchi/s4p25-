@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分屏滑动网页</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            font-family: monospace;
+            color: white;
+        }
+
+        /* 容器样式 */
+        .scroll-container {
+            height: 100vh; /* 容器高度为视口高度 */
+            overflow-y: scroll; /* 允许垂直滚动 */
+            scroll-snap-type: y mandatory; /* 启用垂直滚动吸附 */
+            scroll-behavior: smooth; /* 平滑滚动 */
+        }
+
+        /* 每个部分的样式 */
+        .scroll-section {
+            height: 100vh; /* 每个部分高度为视口高度 */
+            scroll-snap-align: start; /* 滚动时吸附到顶部 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 不同部分的背景色 */
+        .section1 {
+            background-color: #bdb76b;
+        }
+        .section2 {
+            background-color: #8fbc8f;
+        }
+        .section3 {
+            background-color: #3cb371;
+        }
+        .section4 {
+            background-color: #808000;
+        }
+
+        /* 导航栏样式 */
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .nav a:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* 脚注样式 */
+        .footnote {
+            color: #ffcc00; /* 脚注标记颜色 */
+            text-decoration: none;
+            font-size: 0.8em;
+            vertical-align: super; /* 上标效果 */
+        }
+
+        .footnote:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            /* margin-top:; */
+            font-size: 10px;
+            color: black;
+            text-align: left;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 1px;
+        }
+
+        .footnotes h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footnotes p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <a href="#section1">Part I 𖣘</a>
+        <a href="#section2">Part II 𖦹</a>
+        <a href="#section3">Part III ⁂</a>
+        <a href="#section4">Part IV ♫</a>
+        <a href="css-practice.html">Back🧘</a>
+    </div>
+
+    <!-- 分屏滑动容器 -->
+    <div class="scroll-container">
+        <!-- 第一部分 -->
+        <section id="section1" class="scroll-section section1">
+            <h1>𖣘 Part I 𖣘</h1>
+            <img src="image/fleurs-03.gif" alt="Fleurs">
+            <p>A wiki (/ˈwɪki/ ⓘ WICK-ee) is a form of hypertext publication on the internet which is collaboratively edited and managed by its audience directly through a web browser. A typical wiki contains multiple pages that can either be edited by the public or limited to use within an organization for maintaining its internal knowledge base.</p>
+        </section>
+
+        <!-- 第二部分 -->
+        <section id="section2" class="scroll-section section2">
+            <h1>𖦹 Part II 𖦹</h1>
+            <img src="image/etoiles-28.gif" alt="Etoiles">
+            <p>Wikis are powered by wiki software, 
+                also known as wiki engines. 
+                Being a form of content management system, 
+                these differ from other web-based systems such as 
+                blog software or static site generators in that the 
+                content is created without any defined owner or leader. 
+                <br>Wikis have little inherent structure, allowing one to emerge according to the needs of the users.<a href="#fn1" class="footnote">[1]</a> 
+                Wiki engines usually allow content to be written using a lightweight markup language and sometimes edited with the help of a rich-text editor.<a href="#fn2" class="footnote">[2]</a> There are dozens of different wiki engines in use, both standalone and part of other software, such as bug tracking systems. Some wiki engines are free and open-source, whereas others are proprietary. Some permit control over different functions (levels of access); for example, editing rights may permit changing, adding, or removing material. Others may permit access without enforcing access control. Further rules may be imposed to organize content. In addition to hosting user-authored content, wikis allow those users to interact, hold discussions, and collaborate.<a href="#fn3" class="footnote">[3]</a></p>
+        </section>
+
+        <!-- 第三部分 -->
+        <section id="section3" class="scroll-section section3">
+            <h1>⁂ Part III ⁂</h1>
+            <img src="image/mundo.gif" alt="Mundo">
+            <p>There are hundreds of thousands of wikis in use, both public and private, including wikis functioning as knowledge management resources, note-taking tools, community websites, and intranets. Ward Cunningham, the developer of the first wiki software, WikiWikiWeb, originally described wiki as "the simplest online database that could possibly work".<a href="#fn4" class="footnote">[4]</a> "Wiki" (pronounced [wiki][note 1]) is a Hawaiian word meaning "quick".<a href="#fn5" class="footnote">[5]</a></p>
+        </section>
+
+        <!-- 第四部分 -->
+        <section id="section4" class="scroll-section section4">
+            <h1>♫ Part IV ♫</h1>
+            <img src="image/200w.gif" alt="200w">
+            <p>The online encyclopedia project Wikipedia is the most popular wiki-based website, as well being one of the internet's most popular websites, having been ranked consistently as such since at least 2007.<a href="#fn6" class="footnote">[6]</a> Wikipedia is not a single wiki but rather a collection of hundreds of wikis, with each one pertaining to a specific language. The English-language Wikipedia has the largest collection of articles, standing at 6,964,898 as of March 2025.<a href="#fn7" class="footnote">[7]</a></p>
+
+            <!-- 脚注部分 -->
+            
+        </section>
+    </div>
+</body>
+<div class="footnotes">
+                <h2>Footnote</h2>
+                <p id="fn1">[1] Mitchell, Scott (July 2008), Easy Wiki Hosting, Scott Hanselman's blog, and Snagging Screens, MSDN Magazine, archived from the original on March 16, 2010, retrieved March 9, 2010</p>
+                <p id="fn2">[2] "wiki", Encyclopædia Britannica, vol. 1, London: Encyclopædia Britannica, Inc., 2007, archived from the original on April 24, 2008, retrieved April 10, 2008</p>
+                <p id="fn3">[3] Black, Peter; Delaney, Hayden; Fitzgerald, Brian (2007), Legal Issues for Wikis: The Challenge of User-generated and Peer-produced Knowledge, Content and Culture (PDF), vol. 14, eLaw J., archived from the original (PDF) on December 22, 2012</p>
+                <p id="fn4">[4] Cunningham, Ward (June 27, 2002). "What is a Wiki". WikiWikiWeb. Archived from the original on April 16, 2008. Retrieved April 10, 2008.</p>
+                <p id="fn5">[5] "Hawaiian Words; Hawaiian to English". mauimapp.com. Archived from the original on September 14, 2008. Retrieved September 19, 2008.
+                </p>
+                <p id="fn6">[6] Hasan, Heather (2012), Wikipedia, 3.5 million articles and counting, New York : Rosen Central, p. 11, ISBN 9781448855575, archived from the original on October 26, 2019, retrieved August 6, 2019</p>
+                <p id="fn7">[7] Andrews, Lorrin (1865), A dictionary of the Hawaiian language to which is appended an English-Hawaiian vocabulary and a chronological table of remarkable events, Henry M. Whitney, p. 514, archived from the original on August 15, 2014, retrieved June 1, 2014</p>
+            </div>
+</html>
