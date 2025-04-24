@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Image</title>
+    <style>
+        /* 设置 body 元素 */
+        body {
+            margin: 0;
+            /* 去掉默认的页面边距 */
+            height: 50vh;
+            /* 使 body 高度占满整个视口 */
+            background-image: url('assets/book.gif');
+            /* 替换为你想要的图片路径 */
+            background-size: cover;
+            /* 自适应大小，保持图片比例 */
+            background-position: center;
+            /* 居中显示图片 */
+            background-repeat: no-repeat;
+            /* 防止图片重复 */
+        }
+
+        /* 设置所有可拖动的图像样式 */
+        .draggable {
+            width: 60px;
+            height: auto;
+            position: absolute;
+            /* 必须是绝对定位才能拖动 */
+            cursor: move;
+            /* 鼠标样式为拖动 */
+        }
+    </style>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <img src="../image/furniture/round-table.png" style="
+            position: absolute;
+            top: 60vw;
+            left: 20vw;
+            width: 61.188vw;
+            height: 30.375vw;">
+
+    <div style="background: url(image/furniture/round);
+            
+            position: absolute;
+            background-size: 100%;
+            top: 29.688vw;
+            left: 15.625vw;
+            width: 61.188vw;
+            height: 30.375vw;">
+
+
+        <!-- 可拖动的图像 -->
+        <img src="../image/plant/plant01.png" alt="1" class="draggable" id="1">
+        <img src="../image/plant/plant02.png" alt="2" class="draggable" id="2">
+        <img src="../image/plant/plant03.png" alt="3" class="draggable" id="3">
+        <img src="../image/plant/plant04.png" alt="1" class="draggable" id="4">
+        <img src="../image/plant/plant05.png" alt="2" class="draggable" id="5">
+        <img src="../image/plant/plant06.png" alt="1" class="draggable" id="6">
+        <img src="../image/plant/plant07.png" alt="2" class="draggable" id="7">
+        <img src="../image/plant/plant08.png" alt="3" class="draggable" id="8">
+        <img src="../image/plant/plant09.png" alt="1" class="draggable" id="9">
+        <img src="../image/plant/plant10.png" alt="2" class="draggable" id="10">
+        <img src="../image/plant/doll1.gif" alt="1" class="draggable" id="11">
+        <img src="../image/plant/doll2.gif" alt="2" class="draggable" id="12">
+        <img src="../image/plant/glitter-butterfly.gif" alt="2" class="draggable" id="13">
+
+
+
+        <script>
+            // 获取所有可拖动的图像
+            const draggableImages = document.querySelectorAll('.draggable');
+
+            // 随机设置位置
+            function setRandomPosition(image) {
+                // 获取屏幕的宽高
+                const screenWidth = window.innerWidth;
+                const screenHeight = window.innerHeight;
+
+                // 随机计算图片的left和top
+                const randomLeft = Math.random() * (screenWidth - 100);  // 减去图片的宽度避免超出屏幕
+                const randomTop = Math.random() * (screenHeight - 100); // 减去图片的高度避免超出屏幕
+
+                // 设置图片的随机位置
+                image.style.left = `${randomLeft}px`;
+                image.style.top = `${randomTop}px`;
+            }
+
+            // 为每个图像设置随机位置
+            draggableImages.forEach(image => {
+                setRandomPosition(image);
+            });
+
+            // 用于跟踪鼠标拖动的偏移量
+            let offsetX, offsetY, currentElement;
+
+            // 为每个图像绑定拖动事件
+            draggableImages.forEach(image => {
+                image.addEventListener('mousedown', function (event) {
+                    currentElement = image;  // 当前正在拖动的元素
+                    offsetX = event.clientX - currentElement.offsetLeft;
+                    offsetY = event.clientY - currentElement.offsetTop;
+
+                    // 在鼠标移动时更新元素的位置
+                    document.addEventListener('mousemove', moveElement);
+
+                    // 当鼠标松开时停止拖动
+                    document.addEventListener('mouseup', stopDragging);
+                });
+            });
+
+            // 更新元素的位置
+            function moveElement(event) {
+                currentElement.style.left = `${event.clientX - offsetX}px`;
+                currentElement.style.top = `${event.clientY - offsetY}px`;
+            }
+
+            // 停止拖动
+            function stopDragging() {
+                // 移除鼠标移动和鼠标松开的事件监听器
+                document.removeEventListener('mousemove', moveElement);
+                document.removeEventListener('mouseup', stopDragging);
+            }
+        </script>
+<a href="../home-page.html">Back🧘</a>
+
+
+</body>
+
+</html>

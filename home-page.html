@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Vanilla's Room</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="text">
+        <h1>。* ୨୧ ⑅You are inside Vanilla's Room ⑅୨୧ *。</h1>
+        <p>Will you dig through the drawers𓆓, or take the <a href="#">☞ sitemap?</a></p>
+
+    </div>
+
+
+    <div class="room-layout">
+        <!-- 包裹所有家具的容器 -->
+        <div class="furniture-container">
+
+
+            <img src="image/furniture/rug.png" style="
+            position: absolute;
+            top: 50.688vw; 
+            
+            width:100vw;
+            height: 15.375vw;">
+
+
+
+            <div style="background: url(image/furniture/ikea-shelf.png);
+            position: absolute; background-size: 100%;
+            top: 6vw; left: 70.813vw;
+            width: 25vw; height: 52.1875vw;">
+
+                <a href="pages/mysteriousroom.html">
+
+                    <img src="image/furniture/gameboy.png" style="
+                position: absolute;
+                top: 1.5vw; left: 4vw;
+                width: 12vw; height: auto;">
+                </a>
+
+                <a href="pages/type.html">
+
+                    <img src="image/furniture/folder-type.png" style="position: absolute;
+                top: 13vw; left: 8vw;
+                width: 10vw;  /* 2倍原始宽度 */
+                height: auto;" alt="type">
+                </a>
+
+                <img src="image/plant/purpflower-move.gif" style="
+                position: absolute;
+                top: -7vw; left: 8vw;
+                width: 17vw; height: auto;" alt="flower">
+
+                <a href="pages/workflow.html">
+                    <img src="image/furniture/balance-install.gif" style="
+                 position: absolute;
+                 top: 49%; left: 20%;
+                 width:14vw; height: auto;" alt="balance">
+                </a>
+
+
+
+                <img src="image/plant/mushroom.png" style="position: absolute;
+                bottom: -10vw;  left: 4vw;
+                width: 30vw;  /* 2倍原始宽度 */
+                height: auto;" alt="">
+
+
+
+
+
+
+
+            </div>
+
+            <!-- 放置 board01 图像 -->
+            <img src="image/furniture/board01.png" style="width: 22.688vw; 
+                height:auto;
+                position: absolute; 
+                top: 15.688vw; 
+                left: 18.625vw;" alt="Board">
+
+            <a href="pages/daydrop-2025.html" target="_self">
+                <img src="image/furniture/calandar.gif" style="width: 10vw; 
+            height:auto;
+            position: absolute; 
+            top: 16vw; 
+            left: 25vw;" alt="calandar">
+            </a>
+
+
+
+            <img src="image/furniture/candle02.gif" style="position: absolute;
+                filter:sepia(1);
+                top: 16vw; left: 1vw;
+                width: 30vw;  /* 2倍原始宽度 */
+                height: auto;" alt="">
+
+            <a href="pages/flower-book.html">
+                <img src="image/furniture/flower.png" style="width: 18.688vw; 
+                height:auto;
+                position: absolute; 
+                top: 19.688vw; 
+                left: 4.625vw;" alt="flower">
+                </a>
+
+
+
+
+            <!-- <img src="image/furniture/board01.png" alt="board01" class="board01">
+            <img src="image/plant/purpflower-move.gif" alt="purpflower" class="purpflower">
+            
+            <img src="image/furniture/phone.png" alt="phone" class="phone"> -->
+
+
+            <div style="background: url(image/furniture/work-table.png);
+            
+            position: absolute;
+            background-size: 100%;
+            top: 29.688vw;
+            left: 15.625vw;
+            width: 61.188vw;
+            height: 30.375vw;">
+
+                <a href="https://vanillasofter.cargo.site/" target="_self">
+                    <img src="image/furniture/phone.png" style="position: absolute;
+                
+                top: 1vw;  
+                left: 2vw;  
+                width: 12vw;  
+                height: auto;" alt="Phone">
+                </a>
+
+                <a href="pages/myth.html">
+                    <img src="image/furniture/pride&prejudice.png" style="position: absolute;
+                
+                top: 7vw;  
+                left: 11vw;  
+                width: 10vw;  
+                height: 6vw;" alt="BOOK">
+                </a>
+
+                <img src="image/furniture/shaved-ice.gif" style="position: absolute;
+                 top: 2vw;  
+                left: 53vw;
+                 width: 5vw;
+                 height: auto;" alt="">
+
+                <img src="image/furniture/lamp02.gif" style="
+                     position: absolute;
+                     top: 15vw; left: 45vw;
+                     width: 25vw; height: auto;" alt="lamp">
+
+
+
+
+            </div>
+
+            <!-- 使用 div 容器来放置 Mac 背景和 Window 图像 -->
+            <div style="position: absolute; 
+           top: 12.688vw; 
+           left: 35.625vw;
+           width: 25vw; /* 设置 Mac 容器的宽度 */
+           height: 15vw; /* 设置 Mac 容器的高度，确保它可以容纳 Window 图像 */
+           background: url('image/furniture/mac.png') no-repeat center center; 
+           background-size: cover; /* 背景图填充容器 */
+           position: relative;">
+
+                <!-- 放置在 Mac 容器内的 Window 图像，居中 -->
+                <a href="pages/face.html">
+                    <img src="image/furniture/window-outsite.gif" style="position: absolute; 
+                filter: blur(2px);
+                mix-blend-mode: exclusion;
+                top: 40%; 
+                left: 50%; 
+                width: 18vw;
+                height: 12vw;
+                transform: translate(-50%, -50%);" alt="Window">
+                </a>
+
+                <img src="image/furniture/notebook.png" style="position: absolute;
+                
+                top: 5vw;  
+                left: 21vw;  
+                width: 13vw;  
+                " alt="notebook">
+
+                <img src="image/furniture/glass.png" style="width: 10vw; 
+                 height:auto;
+                 position: absolute; 
+                 top: 4vw; 
+                 left: 22.8vw; ;" alt="glass">
+            </div>
+
+            <img src="image/furniture/cat.gif" style="width: 20vw; 
+                 height:auto;
+                 position: absolute; 
+                 top: 57vw; 
+                 left: 22.8vw; ;" alt="cat">
+
+        </div>
+
+
+
+        <img src="image/furniture/music-buttom.gif" alt="Play Music" id="playButton" style="cursor: pointer;
+        top: 5vw; left: 18.625vw;
+        position: absolute;">
+
+        <!-- 音频文件 -->
+        <audio id="audioPlayer" preload="auto">
+            <source src="sound/Cucina Povera & Haron - Riffittelyä III.mp3" type="audio/mp3">
+        </audio>
+
+        <script>
+            const playButton = document.getElementById("playButton");
+            const audioPlayer = document.getElementById("audioPlayer");
+
+            // 点击图片时播放音频
+            playButton.addEventListener("click", function () {
+                console.log("Button clicked! Attempting to play audio.");
+
+                // 尝试播放音频
+                audioPlayer.play().then(() => {
+                    console.log("Audio is playing!");
+                }).catch(error => {
+                    console.error("Error playing the audio:", error);
+                    // 提供反馈给用户
+                    alert("Unable to play audio, probably due to browser settings");
+                });
+            });
+        </script>
+
+
+        <script src="mouse-track.js"></script>
+        <script>
+            // 假设 mouse-track.js 创建了一个名为 mouse-track-element 的 div
+            let mouseTrackElement = document.createElement('main');
+            mouseTrackElement.id = 'mouse-track-element';
+            document.body.appendChild(mouseTrackElement);
+
+            // 设置 mouse-track 的效果容器样式，确保它在最上层
+            mouseTrackElement.style.position = 'absolute';
+            mouseTrackElement.style.top = '0';
+            mouseTrackElement.style.left = '0';
+            mouseTrackElement.style.width = '100vw';
+            mouseTrackElement.style.height = '100vh';
+            mouseTrackElement.style.zIndex = 9999;  // 设置为较大的 z-index
+            mouseTrackElement.style.pointerEvents = 'none';  // 防止影响其他元素的交互
+        </script>
+
+        <script>
+            // 使用 JavaScript 设置鼠标光标，提供默认光标作为备用
+            document.body.style.cursor = 'url("image/plant/star.gif"), auto';
+        </script>
+
+
+</body>
+
+</html>

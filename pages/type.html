@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❝𖦹type❞</title>
+    <style>
+        /* 设置所有可拖动的图像样式 */
+        .draggable {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            /* 必须是绝对定位才能拖动 */
+            cursor: move;
+            /* 鼠标样式为拖动 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 可拖动的图像 -->
+    <img src="../image/type/1.png" alt="1" class="draggable" id="1">
+    <img src="../image/type/2.png" alt="2" class="draggable" id="2">
+    <img src="../image/type/3.png" alt="3" class="draggable" id="3">
+    <img src="../image/type/4.png" alt="1" class="draggable" id="4">
+    <img src="../image/type/5.png" alt="2" class="draggable" id="5">
+    <img src="../image/type/6.png" alt="3" class="draggable" id="6">
+    <img src="../image/type/7.png" alt="1" class="draggable" id="7">
+    <img src="../image/type/8.png" alt="2" class="draggable" id="8">
+    <img src="../image/type/9.png" alt="3" class="draggable" id="9">
+    <img src="../image/type/a.png" alt="" class="draggable" id="a">
+    <img src="../image/type/b.png" alt="" class="draggable" id="b">
+    <img src="../image/type/c.png" alt="" class="draggable" id="c">
+    <img src="../image/type/e.png" alt="" class="draggable" id="e">
+    <img src="../image/type/f.png" alt="" class="draggable" id="f">
+    <img src="../image/type/g.png" alt="" class="draggable" id="g">
+
+    <script>
+        // 获取所有可拖动的图像
+        const draggableImages = document.querySelectorAll('.draggable');
+
+        // 随机设置位置
+        function setRandomPosition(image) {
+            // 获取屏幕的宽高
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            // 随机计算图片的left和top
+            const randomLeft = Math.random() * (screenWidth - 100);  // 减去图片的宽度避免超出屏幕
+            const randomTop = Math.random() * (screenHeight - 100); // 减去图片的高度避免超出屏幕
+
+            // 设置图片的随机位置
+            image.style.left = `${randomLeft}px`;
+            image.style.top = `${randomTop}px`;
+        }
+
+        // 为每个图像设置随机位置
+        draggableImages.forEach(image => {
+            setRandomPosition(image);
+        });
+
+        // 用于跟踪鼠标拖动的偏移量
+        let offsetX, offsetY, currentElement;
+
+        // 为每个图像绑定拖动事件
+        draggableImages.forEach(image => {
+            image.addEventListener('mousedown', function (event) {
+                currentElement = image;  // 当前正在拖动的元素
+                offsetX = event.clientX - currentElement.offsetLeft;
+                offsetY = event.clientY - currentElement.offsetTop;
+
+                // 在鼠标移动时更新元素的位置
+                document.addEventListener('mousemove', moveElement);
+
+                // 当鼠标松开时停止拖动
+                document.addEventListener('mouseup', stopDragging);
+            });
+        });
+
+        // 更新元素的位置
+        function moveElement(event) {
+            currentElement.style.left = `${event.clientX - offsetX}px`;
+            currentElement.style.top = `${event.clientY - offsetY}px`;
+        }
+
+        // 停止拖动
+        function stopDragging() {
+            // 移除鼠标移动和鼠标松开的事件监听器
+            document.removeEventListener('mousemove', moveElement);
+            document.removeEventListener('mouseup', stopDragging);
+        }
+    </script>
+
+<aside>
+    <a href="../home-page.html">
+
+        <img src="../pages/assets/computer.gif" alt="computer"
+        style ="position: absolute;   /* 使其绝对定位 */
+        top: 0;               /* 距离页面顶部为0 */
+        right: 0;             /* 距离页面右边为0 */">
+    </a>
+</aside>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+</head>
+
+<body>
+    <script>
+        let video;
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            clear();
+            video = createCapture(VIDEO);
+            // video.size(320, 240);
+            video.hide();
+        }
+
+        function draw() {
+            tint(255, 255, 150);
+            // image(video, 0, 0, mouseX, height);
+            image(video, mouseX, mouseY, 80, 60);
+        }
+
+        // https://p5js.org/reference/#/p5/image
+        // -- draw entire image, optionally scaled to new size
+        // image(img, x, y, [width], [height])
+
+    </script>
+    <aside>
+        <a href="../home-page.html">
+
+            <img src="../pages/assets/computer.gif" alt="computer"
+            style ="position: absolute;   /* 使其绝对定位 */
+            top: 0;               /* 距离页面顶部为0 */
+            right: 0;             /* 距离页面右边为0 */">
+        </a>
+    </aside>
+</body>
+
+</html>

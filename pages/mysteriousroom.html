@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+</head>
+
+<body>
+    <main>
+    </main>
+    <script>
+        let scene = 0;
+        let typeface;
+
+
+        function preload() {
+            typeface = loadFont("assets/Hershey-Noailles-sans_bold_dotted2.ttf");
+        }
+
+        function setup() {
+            createCanvas(600, 400);
+            textAlign(CENTER, CENTER);
+            textFont(typeface);
+            frameRate(6);
+        }
+
+        function draw() {
+            background(0);
+            fill(255);
+            textSize(18);
+            fill("white");
+
+            if (scene === 0) {
+                push();
+                noStroke();
+                text(
+                    "== You are trapped in a mystery house ==",
+                    width / 2,
+                    (4 * height) / 5
+                );
+                text("== if you want to escape ==", width / 2, (4 * height) / 5 + 20);
+                text("== listen to me ==", width / 2, (4 * height) / 5 + 40);
+
+                pop();
+
+                drawHouse(width / 2, height / 2);
+                drawSmallDoors(1);
+
+                //bling *enter the house*
+                if (frameCount % 6 < 3) {
+                    // 6f/shining
+                    fill(255); // white color type
+                    textSize(24);
+                    text("* Enter the House *", width / 2, height / 2 - 40);
+                }
+            } else if (scene === 1) {
+                push();
+                noStroke();
+                text("== Choose the green door ==", width / 2, (4 * height) / 5 + 20);
+                pop();
+                drawDoors();
+            } else if (scene === 2) {
+                noStroke();
+                text(
+                    "== Sorry, you're in my story now (^-^) ==",
+                    width / 2,
+                    height / 2 - 30
+                );
+
+                drawBackButton();
+            } else if (scene === 3) {
+                drawManyDoors();
+                push();
+                noStroke();
+                fill(255);
+                //     let messages = [
+                //       "== I need you to make a choice ==",
+                //       "== I need you to walk through the door ==",
+                //       "== This is important ==",
+                //       "== The story needs you ==",
+                //       "== It needs you to make a decision ==",
+                //       "== It cannot exist without you ==",
+                //       "== Do you understand me? =="
+                //     ];
+
+                //     for (let i = 0; i < messages.length; i++) {
+                //       text(messages[i], width / 2, (height / 4) - 60 + i * 30);
+                //     }
+                text("== I need you to make a choice ==", width / 2, height / 4 - 60);
+                text(
+                    "== I need you to walk through the door ==",
+                    width / 2,
+                    height / 4 - 30
+                );
+                text("== The story needs you ==", width / 2, height / 4);
+                // text("== The story needs you ==", width / 2, height / 4 + 180);
+                text("== It needs you to make a decision ==", width / 2, height / 4 + 210);
+                text("== It cannot exist without you ==", width / 2, height / 4 + 240);
+                text("== Do you understand me? ==", width / 2, height / 4 + 270);
+                drawBackButton();
+                pop();
+            }
+            //      // places the x and y position of the mouse on the canvas
+            // fill(255)
+            // strokeWeight(1);
+            // textSize(5);
+            // text(`${mouseX}, ${mouseY}`, 20, 20);
+        }
+
+        function drawHouse(x, y) {
+            fill(0);
+            push();
+            stroke(255);
+            strokeWeight(2);
+            rect(x - 120, y - 60, 240, 100);
+            triangle(x - 150, y - 60, x, y - 120, x + 150, y - 60);
+            pop();
+        }
+
+        function drawSmallDoors() {
+            fill(128, 0, 128);
+            stroke(255);
+            strokeWeight(2);
+            rect(330, 180, 40, 60);
+
+            fill(0, 255, 0);
+            stroke(255);
+            strokeWeight(2);
+            rect(230, 180, 40, 60);
+        }
+
+        function drawDoors() {
+            push();
+            fill(0, 255, 0);
+            stroke(255);
+            rect(width / 3 - 40, height / 2 - 60, 80, 120);
+            fill("plum");
+            circle(width / 3 + 30, height / 2, 10);
+            pop();
+            push();
+            fill(128, 0, 128);
+            stroke(255);
+            rect((2 * width) / 3 - 40, height / 2 - 60, 80, 120);
+            fill("lightgreen");
+            circle((2 * width) / 3 + 30, height / 2, 10);
+            pop();
+        }
+
+        function drawManyDoors() {
+            for (let i = 10; i <= width + 1; i += 100) {
+
+                stroke(255);
+                fill(random(255), random(255), random(255), random(255));
+                rect(i, height / 2 - 60, 80, 120);
+                push();
+                textSize(18);
+                stroke(255);
+                fill(255);
+                if (frameCount % 6 < 3) {
+                    // 6f/shining
+                    text("*BACK*", i + 40, height / 2 - 10);
+                    pop();
+                }
+            }
+        }
+
+        function drawBackButton() {
+            // push();
+            // fill(0);
+            // stroke(255);
+            // rect(width / 2 - 75, height / 2 + 55, 150, 40);
+            // pop();
+            fill(255);
+            textSize(20);
+            text("(* Back *)", width / 2, height / 2 + 80);
+        }
+
+        function mousePressed() {
+            if (
+                scene === 0 &&
+                mouseX > width / 2 - 50 &&
+                mouseX < width / 2 + 50 &&
+                mouseY > height / 2 - 50 &&
+                mouseY < height / 2 + 50
+            ) {
+                scene = 1;
+            } else if (scene === 1) {
+                if (
+                    mouseX > width / 3 - 40 &&
+                    mouseX < width / 3 + 40 &&
+                    mouseY > height / 2 - 60 &&
+                    mouseY < height / 2 + 60
+                ) {
+                    scene = 2;
+                } else if (
+                    mouseX > (2 * width) / 3 - 40 &&
+                    mouseX < (2 * width) / 3 + 40 &&
+                    mouseY > height / 2 - 60 &&
+                    mouseY < height / 2 + 60
+                ) {
+                    scene = 3;
+                }
+            } else if (
+                scene === 2 &&
+                mouseX > width / 2 - 50 &&
+                mouseX < width / 2 + 50 &&
+                mouseY > height / 2 + 50 &&
+                mouseY < height / 2 + 90
+            ) {
+                scene = 0;
+            } else if (
+                scene === 3 &&
+                mouseX > width / 2 - 75 &&
+                mouseX < width / 2 + 75 &&
+                mouseY > height / 2 + 55 &&
+                mouseY < height / 2 + 95
+            ) {
+                scene = 1;
+            }
+        }
+
+    </script>
+    <aside>
+        <a href="../home-page.html">
+
+            <img src="../pages/assets/computer.gif" alt="computer" style="position: absolute;   /* 使其绝对定位 */
+            top: 0;               /* 距离页面顶部为0 */
+            right: 0;             /* 距离页面右边为0 */">
+        </a>
+    </aside>
+</body>
+
+</html>

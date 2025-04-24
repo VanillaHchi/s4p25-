@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grounding Exercise</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            font-family: monospace;
+            color: white;
+        }
+
+        /* 容器样式 */
+        .scroll-container {
+            height: 100vh;
+            /* 容器高度为视口高度 */
+            overflow-y: scroll;
+            /* 允许垂直滚动 */
+            scroll-snap-type: y mandatory;
+            /* 启用垂直滚动吸附 */
+            scroll-behavior: smooth;
+            /* 平滑滚动 */
+        }
+
+        /* 每个部分的样式 */
+        .scroll-section {
+            height: 100vh;
+            /* 每个部分高度为视口高度 */
+            scroll-snap-align: start;
+            /* 滚动时吸附到顶部 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 不同部分的背景色 */
+        .section1 {
+            background-color: #bdb76b;
+        }
+
+        .section2 {
+            background-color: #8fbc8f;
+        }
+
+        .section3 {
+            background-color: #3cb371;
+        }
+
+        .section4 {
+            background-color: #808000;
+        }
+
+        /* 导航栏样式 */
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .nav a:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* 脚注样式 */
+        .footnote {
+            color: #ffcc00;
+            /* 脚注标记颜色 */
+            text-decoration: none;
+            font-size: 0.8em;
+            vertical-align: super;
+            /* 上标效果 */
+        }
+
+        .footnote:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            /* margin-top:; */
+            font-size: 10px;
+            color: black;
+            text-align: left;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 1px;
+        }
+
+        .footnotes h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footnotes p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <a href="#section1">Part I 𖣘</a>
+        <a href="#section2">Part II 𖦹</a>
+        <a href="#section3">Part III ⁂</a>
+        <a href="#section4">Part IV ♫</a>
+        <a href="../home-page.html">Back🧘</a>
+    </div>
+
+    <!-- 分屏滑动容器 -->
+    <div class="scroll-container">
+        <!-- 第一部分 -->
+        <section id="section1" class="scroll-section section1">
+            <h1>𖣘 Part I 𖣘</h1>
+            <img src="../pages/assets/rose.gif" alt="rose">
+            <p>
+                Put your hands in water
+            </p>
+            <p>Focus on the water’s temperature
+                <br>how it feels on your fingertips, palms, and the backs of your hands.
+                <br>Does it feel the same in each part of your hand?
+                <br>Use warm water first, then cold.
+                <br>Next, try cold water first, then warm.
+                <br>Does it feel different to switch from cold to warm water versus warm to cold?
+            </p>
+        </section>
+
+        <!-- 第二部分 -->
+        <section id="section2" class="scroll-section section2">
+            <h1>𖦹 Part II 𖦹</h1>
+            <img src="../pages/assets/earth.gif" alt="earth">
+            <p>
+                Listen to your surroundings
+            </p>
+            <p>Take a few moments to listen to the noises around you.
+                <br> Do you hear birds?
+                <br>Dogs barking?
+                <br>Machinery or traffic?
+                <br>If you hear people talking,
+                <br>what are they saying?
+                <br>Do you recognize the language?
+        </section>
+
+        <!-- 第三部分 -->
+        <section id="section3" class="scroll-section section3">
+            <h1>⁂ Part III ⁂</h1>
+            <img src="../pages/assets/pjgdoll.gif" alt="DOLL">
+
+            <p>Feel your body</p>
+            <p>You can do this sitting or standing.
+                <br>Focus on how your body feels from head to toe,
+                <br>noticing each part.
+                <br>Consider:
+                <li> hair on your shoulders or forehead</li>
+                <li> the weight of your shirt on your shoulders</li>
+                <li> whether your arms feel loose or stiff at your sides</li>
+                <li> your heartbeat, and whether it’s rapid or steady</li>
+                <li> whether your stomach feels full or you feel hungry</li>
+                <li> whether your legs are crossed or your feet are resting on the floor</li>
+
+
+
+                <br>
+
+            </p>
+        </section>
+
+        <!-- 第四部分 -->
+        <section id="section4" class="scroll-section section4">
+            <h1>♫ Part IV ♫</h1>
+            <img src="../pages/assets/music.gif" alt="music">
+            <p>
+                Try the 5-4-3-2-1 method
+            </p>
+            <p>Working backward from 5,
+                <br>use your senses to list things you notice around you.
+                <br>For example, you might start by listing:
+
+                <li>5 things you hear</li>
+                <li>4 things you see</li>
+                <li>3 things you can touch from where you’re sitting</li>
+                <li>2 things you can smell</li>
+                <li>1 thing you can taste</li>
+
+            <p>Make an effort to notice the little things you might not always pay attention to,
+                <br> such as the color of the flecks in the carpet
+                <br> or. the hum of your computer.
+            </p>
+
+            <!-- 脚注部分 -->
+
+        </section>
+    </div>
+</body>
+<div class="footnotes">
+    <h2>Footnote</h2>
+    <p id="fn1">[1] Grounding is a practice that can help you pull away from flashbacks, u
+        nwanted memories, and negative
+        or challenging emotions.</p>
+    <p id="fn2">[2] Grounding techniques are exercises that may help you refocus on the present moment to distract
+        yourself from anxious feelings.</p>
+    <p id="fn3">[3] You can use grounding techniques to help create space from distressing feelings in nearly any
+        situation,
+        but they’re especially helpful for improving: anxiety
+        well-being
+        stress
+        depression
+        mood
+        post-traumatic stress disorder (PTSD)
+        dissociation</p>
+    <p id="fn4">[4] I also benefit from embracing a big, sturdy tree while remembering that it has survived many storms
+        and seasons</p>
+
+</div>
+
+</html>

@@ -1,0 +1,112 @@
+h1 {
+    font-size: 2em;
+    font-family: fantasy;
+    margin: 10px auto;
+}
+
+h2 {
+    font-size: 14px;
+    font-family: fantasy;
+    margin: 10px;
+    text-align: right;
+}
+
+h3 {
+    text-align: left;
+    font-family: fantasy;
+    text-indent: 2px;
+    margin: 10px;
+}
+
+
+
+h4 {
+    font-size: 12px;
+    font-family: fantasy;
+    margin: 0 auto;
+}
+
+h5 {
+    font-size: 14px;
+    font-family: cursive;
+    margin: 0 auto;
+}
+
+p{
+    margin: 0 auto;
+}
+/* 重置一些默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html 和 body 占满整个视口，高度 100%，同时禁止整体滚动 */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部标题等内容如果需要滚动可以放到 container 外部，
+     此处我们假设 container 只负责左右两列内容 */
+.container {
+    display: flex;
+    /* 启用 Flex 布局 */
+    height: 100vh;
+    /* 占满整个视口高度 */
+    overflow: auto;
+}
+
+/* 左侧文字内容列 */
+.content {
+    flex: 1;
+    /* 平均分配空间，也可以调整宽度 */
+    overflow-y: auto;
+    /* 垂直滚动 */
+    padding: 20px;
+    overflow: auto;
+
+}
+
+/* 右侧图片列 */
+.image-column {
+    flex: 1;
+    overflow-y: auto;
+    /* 垂直滚动 */
+    padding: 20px;
+}
+
+/* 图片样式，根据需要调整 */
+.image-column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+section {
+    display: block;
+    justify-content: space-between;
+    border-bottom: 1px dotted #8e8e8e;
+    /* 添加底部边框 */
+    padding-bottom: 20px;
+    /* 增加分割线与下方内容的间距 */
+    margin-bottom: 20px;
+    /* 增加 section 之间的间距 */
+    overflow: auto;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+.butterfly {
+    width: 500%;
+    height: 10px;
+    display: block;
+    margin-bottom: 15px;
+}

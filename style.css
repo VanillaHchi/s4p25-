@@ -1,0 +1,11 @@
+/* 确保 mouse-track 的效果层在页面最上面 */
+#mouse-track-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;  /* 确保它位于最上层 */
+    pointer-events: none;  /* 使鼠标事件不被阻止 */
+  }
+  

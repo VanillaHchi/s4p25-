@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Horizontal Scroll</title>
+    <style>
+        /* 容器样式 */
+        .scroll-container {
+            display: flex;
+            /* 使用 flexbox 布局 */
+            width: 100%;
+            /* 容器宽度占满屏幕 */
+            overflow-x: scroll;
+            /* 允许横向滚动 */
+            margin-top: 100px;
+        }
+
+        /* 图片样式 */
+        .scroll-container img {
+            width: 100%;
+            /* 每张图片宽度100% */
+            max-width: 400px;
+            /* 图片最大宽度 */
+            flex-shrink: 0;
+            /* 防止图片缩小 */
+        }
+
+        /* 滚动条样式 */
+        .scroll-container::-webkit-scrollbar {
+            height: 10px;
+            /* 设置滚动条高度 */
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #888;
+            /* 滚动条的颜色 */
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            /* 滚动条的轨道颜色 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scroll-container">
+        <!-- 横向滚动的图片 -->
+        <img src="assets/pamphlet-color-seperation.png" alt="">
+        <img src="assets/pamphlet-color-seperation2.png" alt="">
+        <img src="assets/pamphlet-color-seperation3.png" alt="">
+        <img src="assets/pamphlet-color-seperation4.png" alt="">
+        <img src="assets/pamphlet-color-seperation5.png" alt="">
+        <img src="assets/pamphlet-color-seperation6.png" alt="">
+        <img src="assets/pamphlet-color-seperation7.png" alt="">
+        <img src="assets/pamphlet-color-seperation8.png" alt="">
+        <img src="assets/pamphlet-color-seperation9.png" alt="">
+        <img src="assets/pamphlet-color-seperation10.png" alt="">
+        <img src="assets/pamphlet-color-seperation11.png" alt="">
+        <img src="assets/pamphlet-color-seperation12.png" alt="">
+        <img src="assets/pamphlet-color-seperation13.png" alt="">
+        <img src="assets/pamphlet-color-seperation14.png" alt="">
+        <img src="assets/pamphlet-color-seperation15.png" alt="">
+        <img src="assets/pamphlet-color-seperation16.png" alt="">
+    </div>
+    <aside>
+        <a href="../home-page.html">
+
+            <img src="../pages/assets/computer.gif" alt="computer"
+            style ="position: absolute;   /* 使其绝对定位 */
+            top: 0;               /* 距离页面顶部为0 */
+            right: 0;             /* 距离页面右边为0 */">
+        </a>
+    </aside>
+
+    <img src="assets/adhoc-film-loop-v3.gif" alt="film" style="position: absolute;  /* 使用绝对定位 */
+    top: 80%;             /* 垂直居中 */
+    left: 50%;            /* 水平居中 */
+    width: 200px;        /* 设置图片宽度 */
+    height: auto;        /* 高度根据宽度自动调整 */
+    transform: translate(-50%, -50%); /* 通过 transform 使图片中心点对齐 */">
+
+    <img src="assets/part-as.png" alt="film" style="position: absolute;  /* 使用绝对定位 */
+    top: 90%;             /* 垂直居中 */
+    left: 50%;            /* 水平居中 */
+    width: 200px;        /* 设置图片宽度 */
+    height: auto;        /* 高度根据宽度自动调整 */
+    transform: translate(-50%, -50%); /* 通过 transform 使图片中心点对齐 */">
+</body>
+
+</html>
